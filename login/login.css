@@ -1,0 +1,870 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --black: #111111;
+    --dark: #171717;
+    --yellow: #ffc400;
+
+    --text: #111111;
+    --secondary: #6f6f6f;
+
+    --border: #dedede;
+
+    --background: #f7f7f5;
+
+    --danger: #d92d20;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        42% 58%;
+
+}
+
+
+/* =========================================
+   BRAND PANEL
+========================================= */
+
+.brand-panel {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding:
+        55px;
+
+    background:
+        var(--black);
+
+    color:
+        white;
+
+    overflow: hidden;
+
+}
+
+
+/* subtle background shape */
+
+.brand-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+
+.brand-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -175px;
+    bottom: -175px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.05);
+
+}
+
+
+.brand-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top:
+        20vh;
+
+}
+
+
+.logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 75px;
+
+    height: 38px;
+
+    padding:
+        0 13px;
+
+    border-radius: 8px;
+
+    background:
+        var(--yellow);
+
+    color:
+        var(--black);
+
+    font-size: 18px;
+
+    font-weight: 1000;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.brand-line {
+
+    width: 42px;
+
+    height: 3px;
+
+    margin-top: 28px;
+
+    background:
+        var(--yellow);
+
+}
+
+
+.brand-content h2 {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(30px, 3vw, 48px);
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -1.8px;
+
+    font-weight:
+        750;
+
+}
+
+
+.brand-content p {
+
+    margin-top: 20px;
+
+    color:
+        #a5a5a5;
+
+    font-size: 14px;
+
+}
+
+
+.brand-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        #777;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   LOGIN PANEL
+========================================= */
+
+.login-panel {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        50px 35px;
+
+    background:
+        white;
+
+}
+
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 410px;
+
+}
+
+
+/* =========================================
+   MOBILE LOGO
+========================================= */
+
+.mobile-logo {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome {
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom:
+        12px;
+
+    color:
+        #777;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.8px;
+
+}
+
+
+.welcome h1 {
+
+    font-size:
+        clamp(32px, 4vw, 44px);
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -2px;
+
+    font-weight:
+        750;
+
+}
+
+
+.welcome p {
+
+    margin-top:
+        11px;
+
+    color:
+        var(--secondary);
+
+    font-size:
+        14px;
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.field {
+
+    margin-bottom:
+        19px;
+
+}
+
+
+.field label {
+
+    display: block;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        650;
+
+}
+
+
+.input-wrap {
+
+    position: relative;
+
+}
+
+
+.input-wrap input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        11px;
+
+    outline:
+        none;
+
+    background:
+        white;
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+.input-wrap input::placeholder {
+
+    color:
+        #a0a0a0;
+
+}
+
+
+.input-wrap input:hover {
+
+    border-color:
+        #bdbdbd;
+
+}
+
+
+.input-wrap input:focus {
+
+    border-color:
+        #111;
+
+    box-shadow:
+        0 0 0 3px rgba(17,17,17,.08);
+
+}
+
+
+.password-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+/* =========================================
+   EYE
+========================================= */
+
+.eye-button {
+
+    position: absolute;
+
+    right: 5px;
+    top: 5px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        #777;
+
+    cursor:
+        pointer;
+
+    border-radius:
+        8px;
+
+}
+
+
+.eye-button:hover {
+
+    background:
+        #f2f2f2;
+
+    color:
+        #111;
+
+}
+
+
+.eye-button svg {
+
+    width: 19px;
+    height: 19px;
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+
+    display: none;
+
+    margin:
+        -3px 0 15px;
+
+    padding:
+        11px 13px;
+
+    border-radius:
+        9px;
+
+    background:
+        #fff1f0;
+
+    color:
+        var(--danger);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.4;
+
+}
+
+
+.error-message.show {
+
+    display: block;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border:
+        none;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--black);
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .15s ease,
+        background .2s ease,
+        opacity .2s ease;
+
+}
+
+
+.login-button:hover {
+
+    background:
+        #292929;
+
+}
+
+
+.login-button:active {
+
+    transform:
+        scale(.985);
+
+}
+
+
+.login-button:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        .65;
+
+}
+
+
+/* =========================================
+   SPINNER
+========================================= */
+
+.button-spinner {
+
+    width: 18px;
+    height: 18px;
+
+    border:
+        2px solid rgba(255,255,255,.3);
+
+    border-top-color:
+        white;
+
+    border-radius:
+        50%;
+
+    animation:
+        spin .7s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================
+   SECURITY
+========================================= */
+
+.security-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top:
+        25px;
+
+    color:
+        #888;
+
+    font-size:
+        10px;
+
+}
+
+
+.lock-icon {
+
+    width: 15px;
+    height: 15px;
+
+    display: inline-flex;
+
+}
+
+
+.lock-icon svg {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.login-footer {
+
+    margin-top:
+        55px;
+
+    text-align:
+        center;
+
+    color:
+        #aaa;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .login-page {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .brand-panel {
+
+        display:
+            none;
+
+    }
+
+
+    .login-panel {
+
+        min-height:
+            100vh;
+
+        padding:
+            35px 22px;
+
+    }
+
+
+    .login-box {
+
+        max-width:
+            420px;
+
+    }
+
+
+    .mobile-logo {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        width:
+            58px;
+
+        height:
+            34px;
+
+        margin-bottom:
+            65px;
+
+        border-radius:
+            7px;
+
+        background:
+            var(--yellow);
+
+        color:
+            var(--black);
+
+        font-size:
+            14px;
+
+        font-weight:
+            1000;
+
+        letter-spacing:
+            .8px;
+
+    }
+
+
+    .welcome {
+
+        margin-bottom:
+            30px;
+
+    }
+
+
+    .welcome h1 {
+
+        font-size:
+            35px;
+
+    }
+
+
+}
+
+
+@media (max-width: 420px) {
+
+    .login-panel {
+
+        padding:
+            28px 18px;
+
+    }
+
+
+    .mobile-logo {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .welcome h1 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .input-wrap input,
+    .login-button {
+
+        height:
+            50px;
+
+    }
+
+}
