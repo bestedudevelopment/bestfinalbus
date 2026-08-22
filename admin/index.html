@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f7f7f5"
+    >
+
+    <title>BEST Bus | Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="brand">
+                BEST
+            </div>
+
+            <div class="brand-subtitle">
+                BUS MANAGEMENT
+            </div>
+
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard"
+                >
+
+                    <span class="nav-icon">⌂</span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="buses"
+                >
+
+                    <span class="nav-icon">▣</span>
+
+                    <span>
+                        Buses
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="drivers"
+                >
+
+                    <span class="nav-icon">♙</span>
+
+                    <span>
+                        Drivers
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="monitoring"
+                >
+
+                    <span class="nav-icon">◉</span>
+
+                    <span>
+                        Monitoring
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="reports"
+                >
+
+                    <span class="nav-icon">▤</span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </button>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    System connected
+                </span>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="page-label">
+                    BEST BUS
+                </div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="admin-user">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong id="adminName">
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             DASHBOARD SECTION
+        ================================== -->
+
+        <section
+            id="dashboardSection"
+            class="section"
+        >
+
+
+            <div class="welcome-row">
+
+                <div>
+
+                    <h2>
+                        Fleet overview
+                    </h2>
+
+                    <p id="todayText">
+                        Loading today's data...
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="refreshButton"
+                    class="refresh-button"
+                >
+
+                    ↻
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SUMMARY CARDS
+            ================================== -->
+
+            <div class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL BUSES
+                    </span>
+
+                    <strong id="totalBuses">
+                        —
+                    </strong>
+
+                    <span class="summary-description">
+                        Registered fleet
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        ACTIVE BUSES
+                    </span>
+
+                    <strong id="activeBuses">
+                        —
+                    </strong>
+
+                    <span class="summary-description">
+                        Currently active
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        DRIVERS
+                    </span>
+
+                    <strong id="totalDrivers">
+                        —
+                    </strong>
+
+                    <span class="summary-description">
+                        Registered drivers
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card alert-card">
+
+                    <span class="summary-label">
+                        FUEL ALERTS
+                    </span>
+
+                    <strong id="fuelAlerts">
+                        —
+                    </strong>
+
+                    <span class="summary-description">
+                        Requires attention
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 BUS SECTION
+            ================================== -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        LIVE FLEET
+                    </span>
+
+                    <h2>
+                        All buses
+                    </h2>
+
+                </div>
+
+                <span
+                    id="busCountLabel"
+                    class="count-label"
+                >
+                    —
+                </span>
+
+            </div>
+
+
+            <div
+                id="busGrid"
+                class="bus-grid"
+            >
+
+                <!-- Cards inserted by JS -->
+
+            </div>
+
+
+            <!-- EMPTY -->
+
+            <div
+                id="emptyState"
+                class="empty-state hidden"
+            >
+
+                <div class="empty-icon">
+                    🚌
+                </div>
+
+                <h3>
+                    No buses yet
+                </h3>
+
+                <p>
+                    Add your first bus from the
+                    Bus Management section.
+                </p>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loadingState"
+                class="loading-state"
+            >
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading fleet data...
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             PLACEHOLDER SECTIONS
+             STEP 2+ WILL BUILD THESE
+        ================================== -->
+
+        <section
+            id="busesSection"
+            class="section placeholder-section hidden"
+        >
+
+            <span class="section-eyebrow">
+                STEP 2
+            </span>
+
+            <h2>
+                Bus Management
+            </h2>
+
+            <p>
+                Bus management will be built next.
+            </p>
+
+        </section>
+
+
+        <section
+            id="driversSection"
+            class="section placeholder-section hidden"
+        >
+
+            <span class="section-eyebrow">
+                STEP 3
+            </span>
+
+            <h2>
+                Driver Management
+            </h2>
+
+            <p>
+                Driver management will be built next.
+            </p>
+
+        </section>
+
+
+        <section
+            id="monitoringSection"
+            class="section placeholder-section hidden"
+        >
+
+            <span class="section-eyebrow">
+                MONITORING
+            </span>
+
+            <h2>
+                Monitoring
+            </h2>
+
+            <p>
+                Monitoring will be connected after
+                the driver system is built.
+            </p>
+
+        </section>
+
+
+        <section
+            id="reportsSection"
+            class="section placeholder-section hidden"
+        >
+
+            <span class="section-eyebrow">
+                REPORTS
+            </span>
+
+            <h2>
+                Reports
+            </h2>
+
+            <p>
+                Reports will be built after
+                bus history is available.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script
+        type="module"
+        src="./script.js"
+    ></script>
+
+</body>
+
+</html>
