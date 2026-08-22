@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <title>BEST Bus | Sign In</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="login-page">
+
+
+        <!-- LEFT BRAND AREA -->
+
+        <section class="brand-panel">
+
+            <div class="brand-content">
+
+                <div class="logo">
+                    BEST
+                </div>
+
+                <div class="brand-line"></div>
+
+                <h2>
+                    Bus Management
+                    <br>
+                    System
+                </h2>
+
+                <p>
+                    Simple. Secure. Connected.
+                </p>
+
+            </div>
+
+            <div class="brand-footer">
+                Fleet management made simple.
+            </div>
+
+        </section>
+
+
+
+        <!-- LOGIN AREA -->
+
+        <section class="login-panel">
+
+            <div class="login-box">
+
+
+                <div class="mobile-logo">
+                    BEST
+                </div>
+
+
+                <div class="welcome">
+
+                    <div class="eyebrow">
+                        BEST BUS
+                    </div>
+
+                    <h1>
+                        Welcome back.
+                    </h1>
+
+                    <p>
+                        Sign in to continue.
+                    </p>
+
+                </div>
+
+
+
+                <form
+                    id="loginForm"
+                    autocomplete="on"
+                >
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <div class="input-wrap">
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="name@example.com"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="field">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                        </div>
+
+
+                        <div class="input-wrap">
+
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="eye-button"
+                                aria-label="Show password"
+                            >
+
+                                <svg
+                                    id="eyeIcon"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path
+                                        d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+                                    ></path>
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="2.5"
+                                    ></circle>
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ERROR -->
+
+                    <div
+                        id="errorMessage"
+                        class="error-message"
+                    ></div>
+
+
+
+                    <!-- SIGN IN -->
+
+                    <button
+                        id="loginButton"
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span id="buttonText">
+                            Sign in
+                        </span>
+
+                        <span
+                            id="buttonSpinner"
+                            class="button-spinner hidden"
+                        ></span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="security-note">
+
+                    <span class="lock-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <rect
+                                x="5"
+                                y="10"
+                                width="14"
+                                height="10"
+                                rx="2"
+                            ></rect>
+
+                            <path
+                                d="M8 10V7a4 4 0 0 1 8 0v3"
+                            ></path>
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+                        Your account is securely protected.
+                    </span>
+
+                </div>
+
+
+
+                <div class="login-footer">
+
+                    BEST Bus Management System
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="./script.js"
+    ></script>
+
+</body>
+
+</html>
